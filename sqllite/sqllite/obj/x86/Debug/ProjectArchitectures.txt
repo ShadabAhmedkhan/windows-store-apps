@@ -1,0 +1,1 @@
+C:\Users\php\Desktop\sqllite\sqllite\sqllite.csproj;x86

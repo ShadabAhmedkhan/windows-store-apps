@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="sqllite.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:sqllite"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="WhiteSmoke">
+        <TextBlock  Margin="291,25,574,696" Foreground="Black" FontSize="50"  Text="Database connectivity"  Height="47" Width="501"/>
+        <TextBlock  Margin="94,113,1121,623" Foreground="Black" FontSize="25" Text="EmployeeId"  Height="32" Width="151"/>
+        <TextBox x:Name="box1" HorizontalAlignment="Left" Margin="302,113,0,0"  PlaceholderText="EmployeeId" VerticalAlignment="Top" Width="276"/>
+        <TextBlock HorizontalAlignment="Left" Margin="94,177,0,0" Foreground="Black" FontSize="25" Text="Employeename" VerticalAlignment="Top" Height="32" Width="176"/>
+        <TextBlock HorizontalAlignment="Left" Margin="94,253,0,0" Foreground="Black" FontSize="25" Text="EmployeeAge" VerticalAlignment="Top" Height="32" Width="151"/>
+        <TextBox x:Name="box2" HorizontalAlignment="Left" Margin="302,177,0,0" PlaceholderText="Employeename" VerticalAlignment="Top" Width="276"/>
+        <TextBox x:Name="box3" HorizontalAlignment="Left" Margin="302,253,0,0" PlaceholderText="Employeeage" VerticalAlignment="Top" Width="276"/>
+        <Button Background="Black" Content="Cretae" Name="create" HorizontalAlignment="Left" Margin="26,350,0,0" VerticalAlignment="Top" Width="126" Click="create_Click"/>
+        <Button Background="Black" Content="Insert" Name="add" HorizontalAlignment="Left" Margin="170,350,0,0" VerticalAlignment="Top" Width="126" Click="add_Click"/>
+        <Button Background="Black" Content="update" Name="modify" HorizontalAlignment="Left" Margin="290,350,0,0" VerticalAlignment="Top" Width="126" Click="modify_Click"/>
+        <Button Background="Black" Content="Delete" Name="remove" HorizontalAlignment="Left" Margin="549,350,0,0" VerticalAlignment="Top" Width="104" Height="38" Click="remove_Click"/>
+        <Button Background="Black" Content="fetch" Name="select" HorizontalAlignment="Left" Margin="430,350,0,0" VerticalAlignment="Top" Height="38" Width="92" Click="select_Click"/>
+        <Button Background="Black" Content="Serach" Name="find" HorizontalAlignment="Left" VerticalAlignment="Top" Width="126" Margin="669,349,0,0" Click="find_Click"/>
+        <ListView Name="lstrecord" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="707" Margin="820,25,0,0" VerticalAlignment="Top" Width="501">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="20" Orientation="Horizontal">
+                        <TextBlock>
+                            <Run Text="ID is :" FontSize="20"/><Run Text="{Binding id}" FontSize="20"/><LineBreak/>
+                            <Run Text="name is :" FontSize="20"/><Run Text="{Binding name}" FontSize="20"/><LineBreak/>
+                            <Run Text="age is :" FontSize="20"/><Run Text="{Binding age}" FontSize="20"/><LineBreak/>
+
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+    </Grid>
+</Page>
